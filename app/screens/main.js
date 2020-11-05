@@ -1,4 +1,6 @@
 import React from "react";
+import Svg, { Circle, Rect } from "react-native-svg";
+
 import {
   Text,
   View,
@@ -14,7 +16,7 @@ export default function App() {
         style={{
           backgroundColor: "red",
           flexDirection: "row",
-          height: "30%",
+          height: "15%",
           justifyContent: "space-between",
         }}
       >
@@ -22,13 +24,30 @@ export default function App() {
         <Text> daily budget</Text>
         <Text>Calories consumed</Text>
       </View>
-      <View></View>
+      <View>
+        <Svg height="50%" width="50%" viewBox="0 0 100 100">
+          <Circle
+            cx="150"
+            cy="30"
+            r="45"
+            stroke="blue"
+            strokeWidth="2.5"
+            fill="green"
+          />
+          <Circle
+            cx="50"
+            cy="50"
+            r="42"
+            stroke="black"
+            strokeWidth="2.5"
+            fill="coral"
+          />
+        </Svg>
+      </View>
       <View>
         <Button title="BUTTON"></Button>
         <Button title="BUTTON"></Button>
         <Button title="BUTTON"></Button>
-        <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
-
       </View>
     </SafeAreaView>
   );
