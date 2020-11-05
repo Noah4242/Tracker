@@ -27,6 +27,8 @@ export default function App() {
         <Button title="BUTTON"></Button>
         <Button title="BUTTON"></Button>
         <Button title="BUTTON"></Button>
+        <Circle cx="50" cy="50" r="45" stroke="blue" strokeWidth="2.5" fill="green" />
+
       </View>
     </SafeAreaView>
   );
