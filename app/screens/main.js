@@ -11,31 +11,68 @@ import {
 } from "react-native";
 export default function App() {
   return (
-    <SafeAreaView style={{ backgroundColor: "teal" }}>
+    <SafeAreaView style={{ backgroundColor: "#171930" }}>
       <View
         style={{
-          backgroundColor: "red",
           flexDirection: "row",
-          height: "15%",
-          justifyContent: "space-between",
-          alignItems: "center",
+          height: "5%",
+          width: "100%",
+          alignContent: "space-between",
+          justifyContent: "center",
         }}
       >
-        <Text>calories burned</Text>
-        <Text> daily budget</Text>
-        <Text>Calories consumed</Text>
+        <View
+          style={{
+            backgroundColor: "#3B38C6",
+            width: "33.34%",
+            alignItems: "center",
+          }}
+        >
+          <Text>budget</Text>
+        </View>
+        <View
+          style={{
+            backgroundColor: "#F0A202",
+            width: "33.34%",
+            alignItems: "center",
+          }}
+        >
+          <Text>consumed</Text>
+        </View>
+        <View
+          style={{
+            backgroundColor: "#3B38C6",
+            width: "33.34%",
+            alignItems: "center",
+          }}
+        >
+          <Text>burnt</Text>
+        </View>
       </View>
       <View
         style={{
-          backgroundColor: "teal",
+          backgroundColor: "#171930",
           justifyContent: "center",
           alignItems: "center",
+          flex: "row",
         }}
       >
         <Svg
+          width="110"
+          height="110"
+          viewBox="0 0 110 110"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <Path
+            d="M110 55C110 67.1676 105.965 78.9917 98.5272 88.6212C91.0892 98.2507 80.668 105.142 68.8951 108.216C57.1222 111.29 44.6623 110.373 33.4661 105.609C22.2699 100.845 12.9694 92.5031 7.02087 81.8887C1.07231 71.2743 -1.18856 58.987 0.592238 46.9504C2.37303 34.9139 8.09495 23.8076 16.8622 15.3704C25.6294 6.9332 36.9469 1.64143 49.043 0.323555C61.139 -0.994316 73.3306 1.73612 83.709 8.08738L55 55L110 55Z"
+            fill="#20B1A9"
+          />
+        </Svg>
+        <Svg
           width="100%"
           height="200"
-          viewBox="0 0 300 300"
+          viewBox="0 0 250 250"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -46,10 +83,33 @@ export default function App() {
           />
         </Svg>
       </View>
-      <View>
-        <Button title="BUTTON"></Button>
-        <Button title="BUTTON"></Button>
-        <Button title="BUTTON"></Button>
+      <View style={{ alignItems: "center" }}>
+        <Svg
+          width="414"
+          height="486"
+          viewBox="0 0 414 486"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <Path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M350.449 486H0V0C195.509 0 354 190.503 354 425.5C354 446.039 352.789 466.238 350.449 486Z"
+            fill="#3B38C6"
+          />
+          <Path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M414 0V486H63.551C61.2107 466.238 60 446.039 60 425.5C60 190.503 218.491 0 414 0Z"
+            fill="#3B38C6"
+          />
+          <Path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M350.449 486C352.789 466.238 354 446.039 354 425.5C354 283.399 296.047 157.567 207 80.2887C117.953 157.567 60 283.399 60 425.5C60 446.039 61.2107 466.238 63.551 486H350.449Z"
+            fill="#F0A202"
+          />
+        </Svg>
       </View>
     </SafeAreaView>
   );
