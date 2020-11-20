@@ -1,6 +1,5 @@
 import React from "react";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
-import { NavigationContainer } from '@react-navigation/native';
 
 import {
   Text,
@@ -10,11 +9,12 @@ import {
   SafeAreaView,
   Button,
   TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
-export default function App() {
+
+export default function Main() {
   return (
-    <NavigationContainer>
-    <SafeAreaView style={{ backgroundColor: "#171930" }}>
+    <SafeAreaView style={{ backgroundColor: "#171930", height: "100%" }}>
       <View
         style={{
           flexDirection: "row",
@@ -87,36 +87,11 @@ export default function App() {
         </Svg>
       </View>
       <View style={{ alignItems: "center" }}>
-        <Svg
-          width="414"
-          height="486"
-          viewBox="0 0 414 486"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          ><TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M350.449 486H0V0C195.509 0 354 190.503 354 425.5C354 446.039 352.789 466.238 350.449 486Z"
-            fill="#3B38C6"
-          /></TouchableOpacity><TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M414 0V486H63.551C61.2107 466.238 60 446.039 60 425.5C60 190.503 218.491 0 414 0Z"
-            fill="#3B38C6"
-          />
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M350.449 486C352.789 466.238 354 446.039 354 425.5C354 283.399 296.047 157.567 207 80.2887C117.953 157.567 60 283.399 60 425.5C60 446.039 61.2107 466.238 63.551 486H350.449Z"
-            fill="#F0A202"
-          /></TouchableOpacity>
-        </Svg>
+        <Button
+          title="Go to Jane's profile"
+          onPress={() => navigation.navigate("Login", { name: "Jane" })}
+        />
       </View>
     </SafeAreaView>
-    </NavigationContainer>
   );
 }
