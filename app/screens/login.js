@@ -1,10 +1,11 @@
 import React from "react";
-import { Text, Veiw } from "react-native";
+import { Text, View, Button } from "react-native";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
-    <Veiw style={{ bagroundcolor: "red" }}>
+    <View style={{ bagroundcolor: "red" }}>
       <Text>slkjdlaksjdalsdkj</Text>
-    </Veiw>
+      <Button title="Back" onPress={() => navigation.pop()} />
+    </View>
   );
 }

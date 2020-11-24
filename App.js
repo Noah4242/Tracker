@@ -7,6 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Main from "./app/screens/main";
 import Login from "./app/screens/login";
+import { add } from "react-native-reanimated";
 const Stack = createStackNavigator();
 
 export default () => (
@@ -17,7 +18,8 @@ export default () => (
         component={Main}
         options={{ title: "Welcome" }}
       />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="add" component={add} />
     </Stack.Navigator>
   </NavigationContainer>
 );

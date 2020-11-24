@@ -12,7 +12,7 @@ import {
   TouchableHighlight,
 } from "react-native";
 
-export default function Main() {
+export default function Main({ navigation }) {
   return (
     <SafeAreaView style={{ backgroundColor: "#171930", height: "100%" }}>
       <View
@@ -87,10 +87,8 @@ export default function Main() {
         </Svg>
       </View>
       <View style={{ alignItems: "center" }}>
-        <Button
-          title="Go to Jane's profile"
-          onPress={() => navigation.navigate("Login", { name: "Jane" })}
-        />
+        <Button title="Go" onPress={() => navigation.navigate("Login")} />
+        <Button title="add" onPress={() => navigation.navigate("add")} />
       </View>
     </SafeAreaView>
   );
