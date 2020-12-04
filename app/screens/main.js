@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
 
 import {
@@ -12,7 +12,15 @@ import {
   TouchableHighlight,
 } from "react-native";
 
+import Food from "../../components/food";
+
 export default function Main({ navigation }) {
+  const [calories, setCalories] = useState(0);
+
+  const handleCalorieUpdate = (value) => {
+    setCalories(calories + value);
+  };
+
   return (
     <SafeAreaView style={{ backgroundColor: "#171930", height: "100%" }}>
       <View
@@ -86,9 +94,20 @@ export default function Main({ navigation }) {
           />
         </Svg>
       </View>
+
       <View style={{ alignItems: "center" }}>
         <Button title="Go" onPress={() => navigation.navigate("Login")} />
-        <Button title="add" onPress={() => navigation.navigate("add")} />
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Button title="-" onPress={() => setCalories(calories - 1)} />
+          <Text style={{ color: "#fff" }}>{calories}</Text>
+          <TouchableOpacity onPress={() => setCalories(calories + 1)}>
+            <View style={{ background: "#f00", padding: 5, flex: 1 }}>
+              <Text style={{ color: "#fff" }}>+</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <Button title="Add Carrot" onPress={() => handleCalorieUpdate(-200)} />
+        <Food calories={200} handleCaloriesUpdate={handleCalorieUpdate} />
       </View>
     </SafeAreaView>
   );
