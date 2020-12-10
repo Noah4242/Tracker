@@ -10,23 +10,30 @@ import {
   Button,
   TouchableOpacity,
   TouchableHighlight,
+  Modal,
 } from "react-native";
 
 import Food from "../../components/food";
 
 export default function Main({ navigation }) {
   const [calories, setCalories] = useState(0);
-
   const handleCalorieUpdate = (value) => {
     setCalories(calories + value);
   };
+
+  const [burnt, setBurnt] = useState(0);
+  const handleBurntUpdate = (evalue) => {
+    setBurnt(burnt + evalue);
+  };
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <SafeAreaView style={{ backgroundColor: "#171930", height: "100%" }}>
       <View
         style={{
           flexDirection: "row",
-          height: "5%",
+          height: "8%",
           width: "100%",
           alignContent: "space-between",
           justifyContent: "center",
@@ -36,6 +43,7 @@ export default function Main({ navigation }) {
           style={{
             backgroundColor: "#3B38C6",
             width: "33.34%",
+
             alignItems: "center",
           }}
         >
@@ -45,10 +53,12 @@ export default function Main({ navigation }) {
           style={{
             backgroundColor: "#F0A202",
             width: "33.34%",
+
             alignItems: "center",
           }}
         >
           <Text>consumed</Text>
+          <Text style={{ color: "#fff" }}>{calories}</Text>
         </View>
         <View
           style={{
@@ -58,9 +68,10 @@ export default function Main({ navigation }) {
           }}
         >
           <Text>burnt</Text>
+          <Text style={{ color: "#fff" }}>{burnt}</Text>
         </View>
       </View>
-      <View
+      {/* <View
         style={{
           backgroundColor: "#171930",
           justifyContent: "center",
@@ -93,21 +104,46 @@ export default function Main({ navigation }) {
             fill="#F0A202"
           />
         </Svg>
-      </View>
+      </View> */}
 
-      <View style={{ alignItems: "center" }}>
-        <Button title="Go" onPress={() => navigation.navigate("Login")} />
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Button title="-" onPress={() => setCalories(calories - 1)} />
-          <Text style={{ color: "#fff" }}>{calories}</Text>
-          <TouchableOpacity onPress={() => setCalories(calories + 1)}>
-            <View style={{ background: "#f00", padding: 5, flex: 1 }}>
-              <Text style={{ color: "#fff" }}>+</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <Button title="Add Carrot" onPress={() => handleCalorieUpdate(-200)} />
-        <Food calories={200} handleCaloriesUpdate={handleCalorieUpdate} />
+      <View style={{ alignItems: "center" }}></View>
+      <View>
+        <Modal transparent={false} visible={modalVisible}>
+          <SafeAreaView
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "#3B38C6",
+            }}
+          >
+            <Button
+              title="half mile run"
+              onPress={() => handleBurntUpdate(-200)}
+            />
+            <Food
+              calories={200}
+              title="jhf"
+              handleCaloriesUpdate={handleCalorieUpdate}
+            />
+            <Button
+              title="close"
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            />
+            <Food
+              calories={200}
+              title="p"
+              handleCaloriesUpdate={handleCalorieUpdate}
+            />
+          </SafeAreaView>
+        </Modal>
+        <Button
+          title="open"
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        />
       </View>
     </SafeAreaView>
   );

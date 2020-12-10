@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   Button,
 } from "react-native";
-export default ({ handleCaloriesUpdate, image, calories }) => {
+export default ({ handleCaloriesUpdate, title, image, calories }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleUpdateQuantity = (value) => {
@@ -15,16 +15,16 @@ export default ({ handleCaloriesUpdate, image, calories }) => {
     if (quantity <= 0) setQuantity(1);
   };
   return (
-    <View style={{ backgroundColor: "#f00" }}>
+    <View style={{ backgroundColor: "coral" }}>
       <Image></Image>
       <Text style={{ color: "#fff" }}>calories</Text>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <Button title="-" onPress={() => handleUpdateQuantity(-1)} />
+        {/* <Button title="-" onPress={() => handleUpdateQuantity(-1)} />
         <Text style={{ color: "#fff" }}>{quantity}</Text>
-        <Button title="+" onPress={() => handleUpdateQuantity(1)} />
+        <Button title="+" onPress={() => handleUpdateQuantity(1)} /> */}
       </View>
       <Button
-        title="Add"
+        title={title}
         onPress={() => handleCaloriesUpdate(calories * quantity)}
       ></Button>
     </View>
