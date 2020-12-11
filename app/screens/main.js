@@ -113,7 +113,7 @@ export default function Main({ navigation }) {
             style={{
               width: "100%",
               height: "100%",
-              backgroundColor: "#3B38C6",
+              backgroundColor: "navy",
             }}
           >
             <Button
@@ -122,7 +122,7 @@ export default function Main({ navigation }) {
             />
             <Food
               calories={200}
-              title="jhf"
+              title="pizza"
               handleCaloriesUpdate={handleCalorieUpdate}
             />
             <Button
@@ -133,7 +133,7 @@ export default function Main({ navigation }) {
             />
             <Food
               calories={200}
-              title="p"
+              title="hot dog"
               handleCaloriesUpdate={handleCalorieUpdate}
             />
           </SafeAreaView>

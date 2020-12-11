@@ -1,11 +1,15 @@
-> Why do I have a folder named ".expo-shared" in my project?
+<p>Calorie burners</p>
+<Img>
+<p> feeling your burn</p>
 
-The ".expo-shared" folder is created when running commands that produce state that is intended to be shared with all developers on the project. For example, "npx expo-optimize".
+<p align="center">
+calorie buners is a calorie tracker app that helps you lose weight and burn calories
+</p>
 
-> What does the "assets.json" file contain?
+<p style ="color:blue">
+calorie buners can do this by making you keep track of your eating habits and encouraging you to go burn some calories.Calorie burners is intended for everyone to use from people just trying to manage their eating habbits to powerlifters trying to gain as much muscel in their bulking season.</p>
 
-The "assets.json" file describes the assets that have been optimized through "expo-optimize" and do not need to be processed again.
-
-> Should I commit the ".expo-shared" folder?
-
-Yes, you should share the ".expo-shared" folder with your collaborators.
+<Img>
+<p>
+We can do this buy  making acess to adding calories easy by quickly adding preset food items and exorcises to your daily budget
+</p>

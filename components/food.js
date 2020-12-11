@@ -15,7 +15,7 @@ export default ({ handleCaloriesUpdate, title, image, calories }) => {
     if (quantity <= 0) setQuantity(1);
   };
   return (
-    <View style={{ backgroundColor: "coral" }}>
+    <View style={{ backgroundColor: "orange" }}>
       <Image></Image>
       <Text style={{ color: "#fff" }}>calories</Text>
       <Text></Text>
