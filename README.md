@@ -1,7 +1,7 @@
 ![icon.png](assets/icon.png)
 <p>Calorie burners</p>
 <Img>
-<p> feeling your burn</p>
+<p style="color:blue"> feeling your burn</p>
 
 <p align="center">
 calorie buners is a calorie tracker app that helps you lose weight and burn calories
