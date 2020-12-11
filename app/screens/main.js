@@ -144,6 +144,24 @@ export default function Main({ navigation }) {
             setModalVisible(true);
           }}
         />
+        <Svg style={{}}>
+          <TouchableHighlight>
+            <Path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M414 0V486H63.551C61.2107 466.238 60 446.039 60 425.5C60 190.503 218.491 0 414 0Z"
+              fill="#3B38C6"
+            />
+          </TouchableHighlight>
+          <TouchableHighlight>
+            <Path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M350.449 486C352.789 466.238 354 446.039 354 425.5C354 283.399 296.047 157.567 207 80.2887C117.953 157.567 60 283.399 60 425.5C60 446.039 61.2107 466.238 63.551 486H350.449Z"
+              fill="#F0A202"
+            />
+          </TouchableHighlight>
+        </Svg>
       </View>
     </SafeAreaView>
   );

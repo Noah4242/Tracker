@@ -18,6 +18,7 @@ export default ({ handleCaloriesUpdate, title, image, calories }) => {
     <View style={{ backgroundColor: "coral" }}>
       <Image></Image>
       <Text style={{ color: "#fff" }}>calories</Text>
+      <Text></Text>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         {/* <Button title="-" onPress={() => handleUpdateQuantity(-1)} />
         <Text style={{ color: "#fff" }}>{quantity}</Text>
