@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import Svg, { Circle, Path, Rect } from "react-native-svg";
-import { NavigationContainer } from '@react-navigation/native';
 
 import {
   Text,
@@ -10,15 +9,31 @@ import {
   SafeAreaView,
   Button,
   TouchableOpacity,
+  TouchableHighlight,
+  Modal,
 } from "react-native";
-export default function App() {
+
+import Food from "../../components/food";
+
+export default function Main({ navigation }) {
+  const [calories, setCalories] = useState(0);
+  const handleCalorieUpdate = (value) => {
+    setCalories(calories + value);
+  };
+
+  const [burnt, setBurnt] = useState(0);
+  const handleBurntUpdate = (evalue) => {
+    setBurnt(burnt + evalue);
+  };
+
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
-    <NavigationContainer>
-    <SafeAreaView style={{ backgroundColor: "#171930" }}>
+    <SafeAreaView style={{ backgroundColor: "#171930", height: "100%" }}>
       <View
         style={{
           flexDirection: "row",
-          height: "5%",
+          height: "8%",
           width: "100%",
           alignContent: "space-between",
           justifyContent: "center",
@@ -28,6 +43,7 @@ export default function App() {
           style={{
             backgroundColor: "#3B38C6",
             width: "33.34%",
+
             alignItems: "center",
           }}
         >
@@ -37,10 +53,12 @@ export default function App() {
           style={{
             backgroundColor: "#F0A202",
             width: "33.34%",
+
             alignItems: "center",
           }}
         >
           <Text>consumed</Text>
+          <Text style={{ color: "#fff" }}>{calories}</Text>
         </View>
         <View
           style={{
@@ -50,9 +68,10 @@ export default function App() {
           }}
         >
           <Text>burnt</Text>
+          <Text style={{ color: "#fff" }}>{burnt}</Text>
         </View>
       </View>
-      <View
+      {/* <View
         style={{
           backgroundColor: "#171930",
           justifyContent: "center",
@@ -85,38 +104,65 @@ export default function App() {
             fill="#F0A202"
           />
         </Svg>
-      </View>
-      <View style={{ alignItems: "center" }}>
-        <Svg
-          width="414"
-          height="486"
-          viewBox="0 0 414 486"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          ><TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M350.449 486H0V0C195.509 0 354 190.503 354 425.5C354 446.039 352.789 466.238 350.449 486Z"
-            fill="#3B38C6"
-          /></TouchableOpacity><TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M414 0V486H63.551C61.2107 466.238 60 446.039 60 425.5C60 190.503 218.491 0 414 0Z"
-            fill="#3B38C6"
-          />
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <Path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M350.449 486C352.789 466.238 354 446.039 354 425.5C354 283.399 296.047 157.567 207 80.2887C117.953 157.567 60 283.399 60 425.5C60 446.039 61.2107 466.238 63.551 486H350.449Z"
-            fill="#F0A202"
-          /></TouchableOpacity>
+      </View> */}
+
+      <View style={{ alignItems: "center" }}></View>
+      <View>
+        <Modal transparent={false} visible={modalVisible}>
+          <SafeAreaView
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundColor: "#3B38C6",
+            }}
+          >
+            <Button
+              title="half mile run"
+              onPress={() => handleBurntUpdate(-200)}
+            />
+            <Food
+              calories={200}
+              title="jhf"
+              handleCaloriesUpdate={handleCalorieUpdate}
+            />
+            <Button
+              title="close"
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            />
+            <Food
+              calories={200}
+              title="p"
+              handleCaloriesUpdate={handleCalorieUpdate}
+            />
+          </SafeAreaView>
+        </Modal>
+        <Button
+          title="open"
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        />
+        <Svg style={{}}>
+          <TouchableHighlight>
+            <Path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M414 0V486H63.551C61.2107 466.238 60 446.039 60 425.5C60 190.503 218.491 0 414 0Z"
+              fill="#3B38C6"
+            />
+          </TouchableHighlight>
+          <TouchableHighlight>
+            <Path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M350.449 486C352.789 466.238 354 446.039 354 425.5C354 283.399 296.047 157.567 207 80.2887C117.953 157.567 60 283.399 60 425.5C60 446.039 61.2107 466.238 63.551 486H350.449Z"
+              fill="#F0A202"
+            />
+          </TouchableHighlight>
         </Svg>
       </View>
     </SafeAreaView>
-    </NavigationContainer>
   );
 }
